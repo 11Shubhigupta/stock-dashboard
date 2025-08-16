@@ -1,0 +1,13 @@
+:root {
+  --bg: #0b0f1a;           /* near-black */
+  --panel: #0f1524;        /* dark blue-black */
+  --panel-2: #0d1320;
+  --border: #18223a;
+  --blue: #1e90ff;         /* dodger blue */
+  --blue-soft: #9cc7ff;
+  --text: #e8f1ff;
+  --muted: #b7c9e6;
+  --accent: #00b0ff;       /* cyan-ish */
+  --shadow: 0 10px 30px rgba(0, 64, 160, 0.25);
+  --radius: 16px;
+}

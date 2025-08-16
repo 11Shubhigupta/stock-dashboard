@@ -1,0 +1,107 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(30,144,255,0.12), transparent),
+              linear-gradient(180deg, #0b0f1a 0%, #0b0f1a 100%);
+  color: var(--text);
+}
+
+.app { display: flex; flex-direction: column; height: 100%; }
+
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; background: var(--panel); border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand h1 { margin: 0; font-weight: 800; letter-spacing: 0.3px; }
+.brand .accent { color: var(--blue); }
+.logo-pulse {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--blue); box-shadow: 0 0 0 0 rgba(30,144,255, 0.7);
+  animation: pulse 2s infinite;
+}
+.tagline { color: var(--muted); margin: 0; }
+
+.content { display: grid; grid-template-columns: 280px 1fr; gap: 16px; padding: 16px; height: calc(100% - 74px); }
+
+.sidebar {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.sidebar h2 { margin: 0 0 12px; color: var(--blue); }
+.company-list { overflow-y: auto; display: grid; gap: 10px; padding-right: 4px; }
+.company-item {
+  text-align: left; width: 100%;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #0d1320 0%, #0b0f1a 100%);
+  color: var(--text); border-radius: 12px; padding: 10px 12px;
+  cursor: pointer; transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.company-item:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+.company-item.active { outline: 2px solid var(--blue); }
+.company-item .symbol { font-weight: 700; color: var(--blue); }
+.company-item .name { color: var(--blue-soft); font-size: 13px; }
+
+.main { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.toolbar {
+  display: flex; gap: 12px; align-items: center; background: var(--panel);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 12px;
+}
+.toolbar-group { display: flex; align-items: center; gap: 8px; }
+.toolbar select {
+  background: #0c1321; color: var(--text);
+  border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px;
+}
+
+.metrics {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px;
+}
+.metric {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 14px; padding: 12px; box-shadow: var(--shadow);
+}
+.metric-label { color: var(--blue-soft); font-size: 12px; }
+.metric-value { font-size: 18px; font-weight: 700; color: var(--text); }
+
+.chart-card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.chart-header { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--blue); }
+.chart-wrap { height: 420px; padding: 10px 12px; }
+
+.loader { display: grid; place-items: center; gap: 10px; height: 520px; }
+.spinner {
+  width: 36px; height: 36px; border: 3px solid rgba(156,199,255,0.25);
+  border-top-color: var(--blue); border-radius: 50%; animation: spin 0.9s linear infinite;
+}
+
+@media (max-width: 960px) {
+  .content { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 520px) {
+  .metrics { grid-template-columns: 1fr; }
+}
+/* Indicator toggles */
+.toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #0c1321; border: 1px solid var(--border);
+  border-radius: 12px; padding: 6px 10px; margin-right: 8px;
+}
+.toggle input { accent-color: var(--blue); }
+.toolbar-title { color: var(--blue-soft); font-weight: 600; margin-right: 8px; }
+
+.rsi-bands {
+  position: relative; height: 0;
+}
+.rsi-band {
+  position: relative; height: 0; border-top: 1px dashed rgba(156,199,255,0.35);
+}
