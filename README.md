@@ -1,6 +1,6 @@
 <img width="1355" height="762" alt="image" src="https://github.com/user-attachments/assets/cd830e42-3ccd-4b57-b890-738c7a642a9d" />
 <img width="1365" height="732" alt="Screenshot 2025-08-16 192718" src="https://github.com/user-attachments/assets/85c1f598-34b8-4cbb-8781-4cf4cd3e902b" />
-
+......A scren recording of this project is also added . If it will show the file is big then please click on view raw file to watch the video of project....
 Development Approach
 
 The Stock Market Dashboard was developed with a focus on simplicity, interactivity, and responsiveness. I designed the layout with a left panel containing a scrollable list of companies and a main panel for dynamic stock price charts. My approach was to separate concerns by keeping the frontend purely for visualization and interaction, while the backend handled data and predictions. Smooth animations, a black-blue theme, and responsive styling were added to ensure a professional user experience.
